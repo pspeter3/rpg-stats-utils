@@ -22,5 +22,11 @@
   },
   "dependencies": {
     "ml-matrix": "^6.12.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "typescript": "^5.9.3",
+    "wireit": "^0.14.12"
   }
 }
