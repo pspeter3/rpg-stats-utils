@@ -1,0 +1,23 @@
+{
+  "name": "rpg-stats-utils",
+  "description": "RPG Statistics Utilities",
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "rpg",
+    "stats",
+    "utils"
+  ],
+  "homepage": "https://github.com/pspeter3/rpg-stats-utils#readme",
+  "bugs": {
+    "url": "https://github.com/pspeter3/rpg-stats-utils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pspeter3/rpg-stats-utils.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
