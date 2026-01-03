@@ -1,0 +1,81 @@
+{
+  "name": "rpg-stats-utils",
+  "description": "RPG Statistics Utilities",
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "rpg",
+    "stats",
+    "utils"
+  ],
+  "homepage": "https://github.com/pspeter3/rpg-stats-utils#readme",
+  "bugs": {
+    "url": "https://github.com/pspeter3/rpg-stats-utils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pspeter3/rpg-stats-utils.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "fix": "wireit",
+    "test": "wireit",
+    "test:format": "wireit",
+    "test:spec": "wireit",
+    "test:types": "wireit"
+  },
+  "dependencies": {
+    "ml-matrix": "^6.12.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "prettier": "^3.7.4",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "typescript": "^5.9.3",
+    "wireit": "^0.14.12"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-organize-imports"
+    ]
+  },
+  "wireit": {
+    "fix": {
+      "command": "prettier --cache --write '*.md' '.github/**/*' 'src/**/*.ts'"
+    },
+    "test": {
+      "dependencies": [
+        "test:format",
+        "test:spec",
+        "test:types"
+      ]
+    },
+    "test:format": {
+      "command": "prettier --cache --check '*.md' '.github/**/*' 'src/**/*.ts'",
+      "files": [
+        "*.md",
+        ".github/**/*",
+        "src/**/*.ts"
+      ],
+      "output": []
+    },
+    "test:spec": {
+      "command": "node --test",
+      "files": [
+        "src/**/*.ts"
+      ],
+      "output": []
+    },
+    "test:types": {
+      "command": "tsc",
+      "clean": "if-file-deleted",
+      "files": [
+        "src/**/*.ts",
+        "tsconfig.json"
+      ],
+      "output": [
+        "tsconfig.tsbuildinfo"
+      ]
+    }
+  }
+}
