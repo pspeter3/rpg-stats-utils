@@ -28,5 +28,10 @@
     "prettier-plugin-organize-imports": "^4.3.0",
     "typescript": "^5.9.3",
     "wireit": "^0.14.12"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-organize-imports"
+    ]
   }
 }
