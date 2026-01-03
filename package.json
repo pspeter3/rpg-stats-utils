@@ -18,7 +18,11 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "fix": "wireit",
+    "test": "wireit",
+    "test:format": "wireit",
+    "test:spec": "wireit",
+    "test:types": "wireit"
   },
   "dependencies": {
     "ml-matrix": "^6.12.1"
@@ -34,5 +38,43 @@
     "plugins": [
       "prettier-plugin-organize-imports"
     ]
+  },
+  "wireit": {
+    "fix": {
+      "command": "prettier --cache --write '*.md' 'src/**/*.ts'"
+    },
+    "test": {
+      "dependencies": [
+        "test:format",
+        "test:spec",
+        "test:types"
+      ]
+    },
+    "test:format": {
+      "command": "prettier --cache --check '*.md' 'src/**/*.ts'",
+      "files": [
+        "src/**/*.ts",
+        "*.md"
+      ],
+      "output": []
+    },
+    "test:spec": {
+      "command": "node --test",
+      "files": [
+        "src/**/*.ts"
+      ],
+      "output": []
+    },
+    "test:types": {
+      "command": "tsc",
+      "clean": "if-file-deleted",
+      "files": [
+        "src/**/*.ts",
+        "tsconfig.json"
+      ],
+      "output": [
+        "tsconfig.tsbuildinfo"
+      ]
+    }
   }
 }
