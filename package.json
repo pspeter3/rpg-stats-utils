@@ -19,5 +19,8 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ml-matrix": "^6.12.1"
   }
 }
