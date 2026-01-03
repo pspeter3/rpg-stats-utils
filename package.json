@@ -41,7 +41,7 @@
   },
   "wireit": {
     "fix": {
-      "command": "prettier --cache --write '*.md' 'src/**/*.ts'"
+      "command": "prettier --cache --write '*.md' '.github/**/*' 'src/**/*.ts'"
     },
     "test": {
       "dependencies": [
@@ -51,10 +51,11 @@
       ]
     },
     "test:format": {
-      "command": "prettier --cache --check '*.md' 'src/**/*.ts'",
+      "command": "prettier --cache --check '*.md' '.github/**/*' 'src/**/*.ts'",
       "files": [
-        "src/**/*.ts",
-        "*.md"
+        "*.md",
+        ".github/**/*",
+        "src/**/*.ts"
       ],
       "output": []
     },
